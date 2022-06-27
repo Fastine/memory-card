@@ -11,3 +11,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+h1 {
+  text-align: center;
+}
+
+.gameboard {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2vw;
+}
+
+.gameboard > input {
+  padding: .5vw;
+  min-width: 100px;
+  width: 15vw;
+  height: auto;
+}
+
+.scoreboard {
+  text-align: center;
+}
