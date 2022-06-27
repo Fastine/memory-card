@@ -9,6 +9,7 @@ import  Gunbreaker  from "../src/Img/Gunbreaker.png";
 import  Machinist  from "../src/Img/Machinist.png";
 import  Monk  from "../src/Img/Monk.png";
 import  Ninja  from "../src/Img/Ninja.png";
+import  Paladin  from "../src/Img/Paladin.png";
 import  RedMage  from "../src/Img/RedMage.png";
 import  Samurai  from "../src/Img/Samurai.png";
 import  Scholar  from "../src/Img/Scholar.png";
@@ -29,6 +30,7 @@ const Images = {
     Machinist,
     Monk,
     Ninja,
+    Paladin,
     RedMage,
     Samurai,
     Scholar,
