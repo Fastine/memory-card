@@ -1,8 +1,7 @@
 import React from 'react'
 import "../index.css"
 
-const Scoreboard = (props) => {
-    
+function Scoreboard(props){
     return(
         <div className="scoreboard">
             <div>Current Score: <span>{props.currentScore}</span></div>
@@ -10,7 +9,6 @@ const Scoreboard = (props) => {
             <div>High Score: <span>{props.hiScore}</span></div>
         </div>
     )
-
 }
 
 export default Scoreboard

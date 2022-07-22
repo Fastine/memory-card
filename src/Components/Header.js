@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Scoreboard from './Scoreboard';
 
-const Header = () => {
+function Header(){
 
-    const currentScore = useState(0);
-    const hiScore = useState(0);
+    const [currentScore] = useState(0);
+    const [hiScore] = useState(0);
 
     return (
         <>

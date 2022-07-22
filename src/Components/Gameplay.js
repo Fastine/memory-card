@@ -80,8 +80,10 @@ function Gameplay() {
   ])
 
   const handleClick = function() {
-    shuffleArray(gameboard);
-    setGameboard(gameboard);
+    console.log("HI");
+    var tempArray = [...gameboard];
+    shuffleArray(tempArray);
+    setGameboard(tempArray);
   }
 
   const shuffleArray = function(array) {
@@ -96,7 +98,7 @@ function Gameplay() {
   return (
     <div className="gameboard">
       {gameboard.map((currentValue) => {
-        return <Card key={currentValue.id} name={currentValue.name} onClick={handleClick} />
+        return <Card key={currentValue.id} buttonID={currentValue.id} name={currentValue.name} onCardClick={handleClick} />
         //<input type="image" src={require("../Img/" + currentValue.name + ".png")} alt={currentValue.name} key={currentValue.id} onClick={shuffleArray(gameboard)} />
       })}
     </div>
