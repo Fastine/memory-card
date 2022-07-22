@@ -3,14 +3,14 @@ import Scoreboard from './Scoreboard';
 
 function Header(){
 
-    const [currentScore] = useState(0);
-    const [hiScore] = useState(0);
+    const [currentScore, setCurrentScore] = useState(0);
+    const [hiScore, setHiScore] = useState(0);
 
     return (
-        <>
+        <div>
             <h1>FFXIV Memory Game</h1>
             <Scoreboard currentScore={currentScore} hiScore={hiScore} />
-        </>
+        </div>
     )
 }
 

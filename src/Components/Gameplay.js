@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; 
+import React, { useState, useEffect } from 'react'; 
 import Card from './Card';
 import '../index.css';
 
@@ -79,8 +79,8 @@ function Gameplay() {
     }
   ])
 
-  const handleClick = function() {
-    console.log("HI");
+  const handleClick = function(buttonID) {
+    console.log(buttonID);
     var tempArray = [...gameboard];
     shuffleArray(tempArray);
     setGameboard(tempArray);
@@ -95,14 +95,34 @@ function Gameplay() {
     }
   }
 
-  return (
+
+
+  const renderBoard = function() {
+    return (
+      <div className="gameboard">
+        {gameboard.map((currentValue) => {
+          return <Card key={currentValue.id} buttonID={currentValue.id} 
+          name={currentValue.name} onCardClick={handleClick} />
+          //<input type="image" src={require("../Img/" + currentValue.name + ".png")} alt={currentValue.name} key={currentValue.id} onClick={shuffleArray(gameboard)} />
+        })}
+      </div>
+    )
+  }
+
+  useEffect(() => {
+    renderBoard()
+      // eslint-disable-next-line
+  }, [gameboard])
+
+  return(
     <div className="gameboard">
-      {gameboard.map((currentValue) => {
-        return <Card key={currentValue.id} buttonID={currentValue.id} name={currentValue.name} onCardClick={handleClick} />
-        //<input type="image" src={require("../Img/" + currentValue.name + ".png")} alt={currentValue.name} key={currentValue.id} onClick={shuffleArray(gameboard)} />
-      })}
+     {renderBoard()}
     </div>
-  );
-};
+  )
+
+  // useEffect(() => {
+    
+  // }, [gameboard])
+}
 
 export default Gameplay;
