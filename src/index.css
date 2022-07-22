@@ -16,15 +16,22 @@ h1 {
   text-align: center;
 }
 
+button {
+  all: unset;
+  cursor: pointer;
+}
+
 .gameboard {
   display: flex;
   flex-wrap: wrap;
   padding: 2vw;
+  justify-content: center;
 }
 
-.gameboard > input {
+.gameboard > button {
   padding: .5vw;
   min-width: 100px;
+  max-width: 200px;
   width: 15vw;
   height: auto;
 }

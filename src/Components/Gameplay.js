@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react'; 
+import Card from './Card';
 import '../index.css';
 
 function Gameplay() {
 
-  var gameboard = [
+  const [gameboard, setGameboard] = useState([
     {
       name: "Astrologian",
       id: 1
@@ -71,13 +72,32 @@ function Gameplay() {
     {
       name: "Warrior",
       id: 17
+    },
+    {
+      name: "WhiteMage",
+      id: 18
     }
-  ]
+  ])
+
+  const handleClick = function() {
+    shuffleArray(gameboard);
+    setGameboard(gameboard);
+  }
+
+  const shuffleArray = function(array) {
+    for (var i=array.length - 1; i>=1; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = array[j];
+      array[j] = array[i];
+      array[i] = temp;
+    }
+  }
 
   return (
     <div className="gameboard">
       {gameboard.map((currentValue) => {
-        return <input type="image" src={require("../Img/" + currentValue.name + ".png")} alt={currentValue} key={currentValue.id} />
+        return <Card key={currentValue.id} name={currentValue.name} onClick={handleClick} />
+        //<input type="image" src={require("../Img/" + currentValue.name + ".png")} alt={currentValue.name} key={currentValue.id} onClick={shuffleArray(gameboard)} />
       })}
     </div>
   );

@@ -5,9 +5,9 @@ const Scoreboard = (props) => {
     
     return(
         <div className="scoreboard">
-            <span>Current Score: <span>{props.currentScore}</span></span>
+            <div>Current Score: <span>{props.currentScore}</span></div>
             <br />
-            <span>High Score: <span>{props.hiScore}</span></span>
+            <div>High Score: <span>{props.hiScore}</span></div>
         </div>
     )
 
