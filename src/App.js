@@ -1,13 +1,14 @@
-import Header from "./Components/Header";
-import Gameplay from "./Components/Gameplay";
+import React from "react"
+import Header from "./Components/Header"
+import Gameplay from "./Components/Gameplay"
 
 function App() {
   return (
-    <>
-    <Header />
-    <Gameplay />
-    </>
+    <div className="container">
+      <Header />
+      <Gameplay />
+    </div>
   )
 }
 
-export default App;
+export default App

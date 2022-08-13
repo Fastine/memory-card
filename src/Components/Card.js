@@ -1,12 +1,18 @@
-import React from 'react'
-import '../index.css'
+import React from "react"
+import "../index.css"
 
-function Card(props) {
+function Card({ onCardClick, name, buttonID }) {
   return (
-    <><button id={props.buttonID} onClick={() => props.onCardClick(props.buttonID)}>
-        <img src={require("../Img/" + props.name + ".png")} 
-        height="100%" width="100%" alt={props.name}/>
-    </button></>
+    <>
+      <button id={buttonID} onClick={() => onCardClick(buttonID)}>
+        <img
+          src={require("../Img/" + name + ".png")}
+          height="100%"
+          width="100%"
+          alt={name}
+        />
+      </button>
+    </>
   )
 }
 
